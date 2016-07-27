@@ -1,16 +1,80 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html ng-app="app">
     <head>
         <title>Angular Exercise</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body ng-controller="mainController">
+        
+ <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ng-playground</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#templateOne">Page 1</a></li>
+      <li><a href="#templateTwo">Page 2</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+        <div ng-view>
+            <!-- templates go here -->
+        </div>
+</div>         
+        
+        
+        <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js" type="text/javascript"></script>
+        <script src="bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        
+        <script>
+            
+            var app = angular.module('app', ['ngRoute', 'ngResource']);
+            
+            app.config(function($routeProvider){
+                $routeProvider
+                
+                .when('/templateOne', {
+                    templateUrl: './templates/templateOne.html',
+                    controller: 'templateOneController'
+                })
+                
+                .when('/templateTwo', {
+                    templateUrl: './templates/templateTwo.html',
+                    controller: 'templateTwoController'
+                })
+                
+                .otherwise( {
+                    templateUrl: './templates/templateMain.html',
+                    controller: 'templateMainController'
+                });
+                
+            });
+        
+            app.controller('templateOneController', ['$scope', function($scope){
+                $scope.title = 'templateOne working!';    
+            }]);
+
+            app.controller('templateTwoController', ['$scope', function($scope){
+                $scope.title = 'templateTwo working!';    
+            }]);
+        
+            app.controller('templateMainController', ['$scope', function($scope){
+                $scope.title = 'templateMain working!';    
+            }]);
+ 
+            app.controller('mainController', ['$scope', function($scope){
+                $scope.title = 'ng working!';    
+            }]);
+        
+        </script>
         
     </body>
 </html>
