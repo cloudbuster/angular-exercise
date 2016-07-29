@@ -7,61 +7,60 @@
 		"sauna": true
 	},
 	{
-		"firstName": "Mikko",
+		"firstName": "Herkko",
 		"lastName": "Makkonen",
-		"email": "mikko.karaiste@gmail.com",
-		"diet": "fish",
+		"email": "makkonen22@gmail.com",
+		"diet": "meat",
 		"sauna": true
 	},
 	{
-		"firstName": "Mikko",
+		"firstName": "Maija",
 		"lastName": "Maukonen",
-		"email": "mikko.karaiste@gmail.com",
+		"email": "maija.maukonen@outlook.com",
 		"diet": "fish",
 		"sauna": true
 	},
 	{
-		"firstName": "Mikko",
+		"firstName": "Mervi",
 		"lastName": "Laulavainen",
-		"email": "mikko.karaiste@gmail.com",
-		"diet": "fish",
-		"sauna": true
+		"email": "merla@yahoo.com",
+		"diet": "vegetarian",
+		"sauna": false
 	},
 	{
-		"firstName": "Mikko",
+		"firstName": "Jussi",
 		"lastName": "Turunen",
-		"email": "mikko.karaiste@gmail.com",
+		"email": "jussi.turunen@luukku.com",
+		"diet": "meat",
+		"sauna": true
+	},
+	{
+		"firstName": "Günther",
+		"lastName": "Bösebuben",
+		"email": "guenther.boeseboeben@gmx.de",
 		"diet": "fish",
 		"sauna": true
 	},
 	{
-		"firstName": "Mikko",
-		"lastName": "Sodastreamilainen",
-		"email": "mikko.karaiste@gmail.com",
-		"diet": "fish",
-		"sauna": true
-	},
-	{
-		"firstName": "Mikko",
+		"firstName": "Erkki",
 		"lastName": "Lasinen",
-		"email": "mikko.karaiste@gmail.com",
-		"diet": "fish",
-		"sauna": true
+		"email": "erkki62@hotmail.com",
+		"diet": "meat",
+		"sauna": false
 	},
 	{
-		"firstName": "Mikko",
+		"firstName": "Rauli",
 		"lastName": "Hiironen",
-		"email": "mikko.karaiste@gmail.com",
+		"email": "rauli-hiironen@gmail.com",
 		"diet": "fish",
 		"sauna": true
 	},
 
 	{	
-		"firstName": "Mikko",
-		"lastName": "Karhunen",
-		"email": "mikko.karaiste@gmail.com",
-		"diet": "fish",
-		"sauna": true
+		"firstName": "Paula",
+		"lastName": "Viitaniemi",
+		"email": "paula.viitaniemi@jamk.fi",
+		"diet": "vegetarian",
+		"sauna": false
 	}
 ]
-

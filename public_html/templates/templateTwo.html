@@ -14,7 +14,12 @@
         <td>{{ person.email }}</td>
         <td>{{ person.diet }}</td>
         <td>{{ person.sauna }}</td>
-    </tr>    
+    </tr>
+    <tr ng-repeat="onlyOne in fromService">
+        <td>{{ onlyOne.firstName }}</td>
+        <td>{{ onlyOne.lastName }}</td>
+        <td>{{ onlyOne.email }}</td>
+        <td>{{ onlyOne.diet }}</td>
+        <td>{{ onlyOne.sauna }}</td>
+    </tr> 
 </table>
-<script>document.write(localStorage.getItem("persons"));</script>
-
