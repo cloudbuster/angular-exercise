@@ -5,66 +5,69 @@
 var app = angular.module('app', ['ngRoute', 'ngResource']);
 
 app.config(function ($routeProvider) {
-    $routeProvider
 
-    .when('/templateOne', {
-        templateUrl: './templates/templateOne.html',
-        controller: 'templateOneController'
-    })
+	$routeProvider
 
-    .when('/templateTwo', {
-        templateUrl: './templates/templateTwo.html',
-        controller: 'templateTwoController'
-    })
+	.when('/templateOne', {
+		templateUrl: './templates/templateOne.html',
+	controller: 'templateOneController'
+	})
 
-    .otherwise({
-        templateUrl: './templates/templateMain.html',
-        controller: 'templateMainController'
-    });
+	.when('/templateTwo', {
+		templateUrl: './templates/templateTwo.html',
+	controller: 'templateTwoController'
+	})
+
+	.otherwise({
+		templateUrl: './templates/templateMain.html',
+	controller: 'templateMainController'
+	});
 
 });
 
 app.service('myService', function(){
-    this.tempStorage = new Array();
+	this.tempStorage = new Array();
 });
 
 app.controller('templateOneController', ['$scope', 'myService', function ($scope, myService) {
-    $scope.title = 'templateOne working!';
-    
-    $scope.register = function(){
-        // JSON stringiksi (localStorage("key", JSON.stringify(myJson)), 
-        // stringi JSONiksi JSON.parse(localStorage(getItem('person');
-        myService.tempStorage.push($scope.reg);
+		
+	$scope.title = 'templateOne working!';
 
-        console.log("$scope.reg:" + JSON.stringify($scope.reg));
-        console.log("myService.tempStorage: " + JSON.stringify(myService.tempStorage));
-    };
+	$scope.register = function(){
+		// JSON stringiksi (localStorage("key", JSON.stringify(myJson)), 
+		// stringi JSONiksi JSON.parse(localStorage(getItem('person');
+		myService.tempStorage.push($scope.reg);
+
+		console.log("$scope.reg:" + JSON.stringify($scope.reg));
+		console.log("myService.tempStorage: " + JSON.stringify(myService.tempStorage));
+	};
 
 }]);
 
 app.controller('templateTwoController', ['$scope', '$resource', '$http', 'myService', function ($scope, $resource, $http, myService) {
-    $scope.title = 'templateTwo working!';
+	
+	$scope.title = 'templateTwo working!';
 
-    var onDataLoaded = function (response) {
-        $scope.persons = response.data;
-        console.log("Success!");
-    };
+	var onDataLoaded = function (response) {
+		$scope.persons = response.data;
+		console.log('Data loading was a success!');
+	};
 
-    var onError = function (reason) {
-        console.log("Didn't work. Error." + reason.data);
-    };
+	var onError = function (reason) {
+		console.log('Error, data could not be loaded.' + reason.data);
+	};
 
-    $http.get('./api/list.json')
-            .then(onDataLoaded, onError);
+	$http.get('./api/list.json')
+		.then(onDataLoaded, onError);
 
-    $scope.fromService = myService.tempStorage;
-    console.log("***** tempStorage :" + myService.tempStorage[0].firstName);
+	$scope.fromService = myService.tempStorage;
+	console.log("***** tempStorage :" + myService.tempStorage[0].firstName);
 }]);
     
 app.controller('templateMainController', ['$scope', function ($scope) {
-    $scope.title = 'templateMain working!';
+	$scope.title = 'templateMain working!';
 }]);
-	
+
 app.controller('mainController', ['$scope', function ($scope) {
-    $scope.title = 'ng working!';
+	$scope.title = 'ng working!';
 }]);
